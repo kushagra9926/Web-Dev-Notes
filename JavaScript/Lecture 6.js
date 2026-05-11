@@ -186,6 +186,7 @@ function outerFunc(){
 
 }
 outerFunc()
+
 /* 
 IMPORTANT RULE
 
@@ -215,20 +216,45 @@ changeGreet();
 
 // Output: hello 
 //         namaste
-//         namaste
 
-// Functions Expressions:
-                        // const variable = function(arg1, arg2..){
-                        // do or return something
-                        // } 
-const add = function(a, b){
-    return a + b 
-}
-let hi = function(){
-    console.log("Hello");
+// Functions Expressions:  A function stored inside a variable.
+        /*
+        const variable = function(arg1, arg2..){
+                         // code
+                        };
+        */ 
+       
+let hi = function() {
+  console.log("Hello");
+};
+
+hi();  // Hello
+
+// IMPORTANT
+/*
+Function Declaration: 
+---> Can be called before definition.
+*/
+sayHi();
+
+function sayHi() {
+  console.log("Hi");
 }
 
-// Higher order funcion:
+// ✅ Works
+
+// But for Function Expression it'll show error Because the variable is not initialized yet.
+
+// Higher order funcion (HOF):
+/*
+In JavaScript, a Higher-Order Function (HOF) is:
+
+👉 A function that:
+
+---> takes another function as an argument, or
+---> returns a function
+*/
+
 function multipleHadappa(func, count){  // Higher order function 
     for(let i = 1; i <= count; i++){
         func();
