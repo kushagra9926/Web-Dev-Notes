@@ -267,22 +267,30 @@ multipleHadappa(hadappa, 5);
 multipleHadappa(function(){console.log("Namaste")}, 5);
 
 // Higher order function (Returns):
-function oddEvenFactory(request){
-    if(request == "odd"){
-        return function(n){
-            console.log(!(n % 2 == 0));
-        }
-    }
-    else if(request == "even"){
-        return function(n){
-            console.log(n % 2 == 0);
-        }
-    }
-    else{
-        console.log("wrong request");
-    }
+function multiplier(x) {
+  return function(y) {
+    return x * y;
+  };
 }
-let request = "odd"; //even
+
+let double = multiplier(2);
+
+console.log(double(5));   // 10
+/*
+Explanation:
+    multiplier(2)
+    
+    returns:
+        function(y) {
+            return 2 * y;
+        }
+    
+    So:
+        double(5)
+
+    becomes:
+        2 * 5
+*/
 
 // Methods:
 const calculator = {
