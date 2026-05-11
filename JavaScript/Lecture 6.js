@@ -181,7 +181,7 @@ function outerFunc(){
         console.log(x);   // 5
         console.log(y);   // 6
     }
-    console.log(a);   // Error
+    // console.log(a);   // Error
     innerFunc();
 
 }
@@ -293,7 +293,7 @@ Explanation:
         2 * 5
 */
 
-// Methods:
+// Method: A function inside an object.
 const calculator = {
     add: function(a, b){
         return a + b;
@@ -317,3 +317,6 @@ const calc = {
         return a * b;
     }
 };
+console.log(calc.add(10, 20));  // 30
+console.log(calc.mul(10, 20));  // 200
+console.log(calc.sub(10, 20));  // -10
