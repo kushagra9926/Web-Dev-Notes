@@ -38,6 +38,8 @@ This works, but if the object name changes, code breaks.
 Using this makes methods reusable.  
 */
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
+
 // this IN DIFFERENT OBJECTS
 let user1 = {
   name: "Aman",
@@ -57,6 +59,8 @@ user1.show();  // Aman
 user2.show();  // Rahul
 //this automatically points to the object calling the method.
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
+
 // this IN REGULAR FUNCTION
 function test() {
   console.log(this);
@@ -65,6 +69,7 @@ function test() {
 test();
 // In browsers, this usually becomes the global object (window).
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
 // this IN ARROW FUNCTIONS
 /*
@@ -149,6 +154,7 @@ So inside arrow function:
 too.
 */
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
 // try and catch:
 // The try statement allows you to define a block of code to be tested for errors while it is being exeuted.
@@ -172,11 +178,13 @@ try {
 console.log("hello2");
 console.log("hello2");
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
+
 // Arror functions:
 const sum = (a, b) => {
     return a + b;
 };
-const cube = n => {    // Agar single variable hai toh bracket lagana zaroori nhi hota. 
+const cube = n => {    // Parentheses are optional for one parameter 
     return n * n * n;
 };
 const pow = (a, b) => {
@@ -185,11 +193,18 @@ const pow = (a, b) => {
 
 // there is also a shorter way to write arrow function which is:
 const add = (a, b) => (a + b);  // Jab arrow function sirf value return kr rha hoga uss time return keyword ko hi gayab kr sakte or compact form main likh sakte.
+// This is called implicit return.
 
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
-// Set Timeout
-// setTimeout(function, timeout)  timeout is in milliseconds
+// Set Timeout: In JavaScript, setTimeout() is used to run code after a delay.
+// Syntax:  
+/*
+    setTimeout(function, time);
 
+    ---> function → code to run
+    ---> time → delay in milliseconds
+*/ 
 console.log("hi there!")
 
 setTimeout( () => {
@@ -197,6 +212,15 @@ setTimeout( () => {
 }, 4000);
 
 console.log("Welcome to");
+
+// Output: 
+/*
+hi there!
+Welcome to
+Gaming Zone
+*/
+
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
 // Set Inerval
 // setInterval(function, timeout)  timeout is in milliseconds
@@ -220,6 +244,8 @@ console.log(id2);
     console.log("clear interval ran")
  },3000);
 // To stop set interval we use clear interval:  clearInterval(id name);
+
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
 // this with Arrow Function:
 // in arrow function scope is same as of parent scope.(lexical scope)
@@ -248,6 +274,8 @@ const stu = {
         }, 2000)
     },
 };
+
+// -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
 // Practice question:
 // Question 1: Write an arrow function that return the square of a number 'n'.
