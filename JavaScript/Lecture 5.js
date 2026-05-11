@@ -1,4 +1,4 @@
-// Object literals in Java Scprit....
+// Object literals in Java Scprit : It stores data in key-value pairs.
 const post = {
     username: "Kushagra Joshi",
     content: "This is my first Post",
@@ -14,10 +14,28 @@ const post = {
 // post.username
 
 // If we have to use variables than we have to use [] instead of (.).
-// For example: In the above thing if we assign 
-// prop = "reposts";
-// then if we have to use prop to find the value then we have to use [] instead of (.).
+/*
+Dot notation: Used when you know the property name directly.
+    Example: 
+        let person = {
+            name: "Kushagra",
+            age: 20
+        };
+        console.log(person.name); // Kushagra
 
+Bracket notation: Used when the property name is stored in a variable.
+    Example: 
+        let person = {
+            name: "Kushagra",
+            age: 20
+        };
+
+        let key = "name";
+
+        console.log(person[key]); // Kushagra
+*/
+
+// In JavaScript, when you use a number as a property name, JavaScript automatically converts it into a string.
 const obj = {
     1: "a",
     2: "b",
@@ -25,12 +43,47 @@ const obj = {
     null: "d",
     undefined: "e",
 };
-// So in this case when you write obj[1] it will show value "a"
-// this is because JavaScript first converts interger value 1 to string and then do further things.
-// Math.pow(a,b): a ** b 
-// Math.floor(n): Number less than or equal to n one.
-// Math.ceil(n): Number greater than or equal to n one.
-// Math.random(): Random number between [0,1).
+console.log(obj[1]);   // a
+console.log(obj["1"]); // a
+// console.log(obj.1);    This gives a syntax error.
+
+// Some most commonly used Math. methods and properties:
+/*
+Math Properties:
+    Math.PI       // 3.14159...
+    Math.E        // Euler's number
+    Math.SQRT2    // Square root of 2
+    Math.LN2      // Natural log of 2
+
+Number Rounding Methods:
+    Math.round(4.6)   // 5
+    Math.floor(4.9)   // 4     // Go to lower integer
+    Math.ceil(4.1)    // 5
+    Math.trunc(4.9)   // 4     // Just remove decimal	
+
+Power & Root:
+    Math.pow(2, 3)    // 8
+    Math.sqrt(25)     // 5
+    Math.cbrt(27)     // 3
+
+Absolute & Sign:
+    Math.abs(-7)      // 7
+    Math.sign(-5)     // -1
+    Math.sign(5)      // 1
+
+Maximum & Minimum:
+    Math.max(1, 5, 9)   // 9
+    Math.min(1, 5, 9)   // 1
+
+Random Numbers:
+    Math.random()                     // Gives a random decimal between 0 and 1.
+    Math.floor(Math.random() * 10)    // Random number from 0 to 9.
+
+Logarithmic Methods:
+    Math.log(10)
+    Math.log10(100)
+    Math.log2(8)
+*/
 
 // Question: Find random number between 1 to 10 in a loop when user write 'roll'.
 // Solution:
