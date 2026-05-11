@@ -222,13 +222,18 @@ Gaming Zone
 
 // -------------------------------------*------------------------------*---------------------------------------*-------------------------------------------*---------------------------------------
 
-// Set Inerval
-// setInterval(function, timeout)  timeout is in milliseconds
+// Set Interval: In JavaScript, setInterval() is used to run code again and again after a fixed time interval.
+// Syntax:
+/*
+    setInterval(function, time);
+    ---> function → code to run repeatedly
+    ---> time → interval in milliseconds
+*/
 
 console.log("hi there!")
 
 let id1 = setInterval( () => {
-    console.log("Kushagra Don")
+    console.log("Kushagra")
 },2000);
 
 // We can assign id for set intervals like this:
