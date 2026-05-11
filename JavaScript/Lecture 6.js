@@ -124,7 +124,7 @@ function test() {
 
 test();                 
 
-console.log(age);      // Error
+// console.log(age);      // Error
 
 // Block scope: A variable exists only inside a block { }.
 /*
@@ -144,8 +144,8 @@ A block can be:
   console.log(y); // 20
 }
 
-console.log(x); // Error
-console.log(y); // Error
+// console.log(x); // Error
+// console.log(y); // Error
 
 // 2. 
 if (true) {
@@ -153,7 +153,7 @@ if (true) {
   console.log(message);  // Hello
 }
 
-console.log(message); // Error
+// console.log(message); // Error
 
 // 3. 
 if (true) {
@@ -172,18 +172,31 @@ KEYWORD	                SCOPE TYPE
 */
 
 // Lexical Scope: A variable defined outside a function can be accesible inside another function defined after the variable declaration.The oppsite is not true. 
+console.log("Lexical scope");
 function outerFunc(){
     let x = 5; 
     let y = 6;
     function innerFunc(){
         let a = 10;
-        console.log(x);
-        console.log(y);
+        console.log(x);   // 5
+        console.log(y);   // 6
     }
-    console.log(a);
+    console.log(a);   // Error
     innerFunc();
 
 }
+outerFunc()
+/* 
+IMPORTANT RULE
+
+Inner functions can access:
+
+--> their own variables
+--> outer function variables
+--> global variables
+
+But outer functions cannot access inner variables.
+*/
 
 // Practice quesiton: What will be the output?
 let greet = "hello"; // Global Scope
