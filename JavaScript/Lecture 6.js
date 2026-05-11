@@ -276,6 +276,7 @@ function multiplier(x) {
 let double = multiplier(2);
 
 console.log(double(5));   // 10
+
 /*
 Explanation:
     multiplier(2)
