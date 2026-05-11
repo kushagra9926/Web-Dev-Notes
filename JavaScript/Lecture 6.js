@@ -124,7 +124,7 @@ function test() {
 
 test();                 
 
-// console.log(age);      // Error
+console.log(age);      // Error
 
 // Block scope: A variable exists only inside a block { }.
 /*
@@ -144,8 +144,8 @@ A block can be:
   console.log(y); // 20
 }
 
-// console.log(x); // Error
-// console.log(y); // Error
+console.log(x); // Error
+console.log(y); // Error
 
 // 2. 
 if (true) {
@@ -153,7 +153,7 @@ if (true) {
   console.log(message);  // Hello
 }
 
-// console.log(message); // Error
+console.log(message); // Error
 
 // 3. 
 if (true) {
@@ -181,7 +181,7 @@ function outerFunc(){
         console.log(x);   // 5
         console.log(y);   // 6
     }
-    // console.log(a);   // Error
+    console.log(a);   // Error
     innerFunc();
 
 }
