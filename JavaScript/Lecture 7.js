@@ -25,11 +25,11 @@ const student = {
 
 // WHY this IS USEFUL
     // Without this:
-    let person = {
+    let Person = {
         name: "Kushagra",
 
         greet: function() {
-            console.log(person.name);
+            console.log(Person.name);
         }
     };
 /*
@@ -115,7 +115,7 @@ which is usually undefined.
 */
 
 // 2. Correct Use of Arrow Functions
-let person = {
+let persons = {
   name: "Kushagra",
 
   greet: function() {
@@ -128,7 +128,7 @@ let person = {
   }
 };
 
-person.greet();   // Kushagra
+persons.greet();   // Kushagra
 
 // Why does this work?
 /*
@@ -149,9 +149,18 @@ So inside arrow function:
 too.
 */
 
+
 // try and catch:
 // The try statement allows you to define a block of code to be tested for errors while it is being exeuted.
 // The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+// Basic Syntax: 
+try {
+  // code that may cause error
+} catch(error) {
+  // code to handle error
+}
+
 console.log("hello");
 console.log("hello");
 try {
