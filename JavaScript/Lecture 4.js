@@ -169,7 +169,7 @@ console.log("for-of loop");
 for(fruit of fruits){
     console.log(fruit);
 }
-for (string of "Kushsgara joshi"){
+for (string of "Kushagra joshi"){
     console.log(string);
 }
 
