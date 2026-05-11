@@ -81,6 +81,17 @@ for(let i = 50; i>=5; i = i - 5){
 console.log("Print the multiplication table for any number n!");
 let n = prompt("Enter any natural number:");
 n = parseInt(n); //Important point!
+/*
+parseInt: It converts a value (usually a string) into an integer (whole number).
+    Examples:
+        parseInt("42");        // 42
+        parseInt("42px");      // 42  (stops reading at non-number)
+        parseInt("3.14");      // 3   (decimal part is removed)
+        parseInt("101", 2);    // 5   (binary → decimal)
+
+        parseInt("hello");     // NaN
+*/
+
 for(let i = n; i <= n * 10; i = i + n){
     console.log(i);
 }
