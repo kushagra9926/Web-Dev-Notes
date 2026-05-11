@@ -94,35 +94,82 @@ function Concat(str){
 }
 console.log(Concat(str));
 
-// Function Scope and Global scope:
-let summ = 54;
- 
-function calSum(a, b){
-    let summ = a + b;
-    console.log(summ);  //Jab function ke andar hota hai tab Function scope dominate krta hai.
-}
-calSum(1, 2);
-console.log(summ);  //Jab function ke bahar hota hai tab Global dominate krta hai.
+// FUNCTION AND GLOBAL SCOPE
 
-// Block scope:
-// Example 1:
+/*
+In JavaScript, scope means:
+
+👉 “Where a variable can be accessed from.”
+
+The two important types are:
+
+Global Scope: A variable declared outside any function is called a global variable.
+Function Scope: A variable declared inside a function can only be used inside that function.
+*/
+// 1. Global Scope: 
+let name = "Kushagra";
+
+function showName() {
+  console.log(name);   // Kushagra
+}                      
+                       
+showName();            
+console.log(name);     // Kushagra
+
+// 2. Function Scope:  
+function test() {           
+  let age = 20;         
+  console.log(age);         
+}                       
+
+test();                 
+
+console.log(age);      // Error
+
+// Block scope: A variable exists only inside a block { }.
+/*
+A block can be:
+--> if
+--> while
+--> for
+--> or any { }
+*/
+//Examples:
+// 1.  
 {
-    let a = 25;
-}
-// console.log(a);  //It will show a is not defined because of block statement.
+  let x = 10;
+  const y = 20;
 
-// Example 2:
-for(let i = 1 ; i <= 2; i++){
-    console.log(i);
+  console.log(x); // 10
+  console.log(y); // 20
 }
-// console.log(i);  // It will show i is not defined because i is only defiened for (for loop) and outside of it i is not defined.
 
-// Example 3:
-let age = 19;
-if(age >= 19){
-    let string = "adult";
+console.log(x); // Error
+console.log(y); // Error
+
+// 2. 
+if (true) {
+  let message = "Hello";
+  console.log(message);  // Hello
 }
-// console.log(string); // It will show string is not define because of same reason it is in block scope.
+
+console.log(message); // Error
+
+// 3. 
+if (true) {
+  var num = 5;
+}
+
+console.log(num); // 5      
+// Because var uses FUNCTION SCOPE, NOT BLOCK SCOPE.
+
+//*IMPORTANT*
+/*
+KEYWORD	                SCOPE TYPE
+  var	              Function Scope
+  let	                Block Scope
+ const	                Block Scope
+*/
 
 // Lexical Scope: A variable defined outside a function can be accesible inside another function defined after the variable declaration.The oppsite is not true. 
 function outerFunc(){
