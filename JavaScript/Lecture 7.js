@@ -1,5 +1,11 @@
 // this Keyword:
-//              "This" keyword refers to an object that is executing the current piece of code.
+/*
+In JavaScript, the this keyword refers to:
+
+👉 “The object that is currently calling the function.”
+
+The value of this depends on how the function is called.
+*/
 const student = {
     name: "Kushagra",
     age: 19,
@@ -11,16 +17,137 @@ const student = {
         // console.log(avg);   
         
         // Here we use "this" keyword.
-        console.log(this);        // Here this will show student object. 
+        console.log(this);        // Here this === student 
         let avg = (this.eng + this.math + this.phy) / 3;
         console.log(`${this.name} average is: ${avg}`);
     }
 }
-// ek tab pr jo sabse higher level pr jo object hoti woh 'window' object hoti.
 
-function getAvg(){
-    console.log(this);     // Here this will show window object. 
+// WHY this IS USEFUL
+    // Without this:
+    let person = {
+        name: "Kushagra",
+
+        greet: function() {
+            console.log(person.name);
+        }
+    };
+/*
+This works, but if the object name changes, code breaks.
+
+Using this makes methods reusable.  
+*/
+
+// this IN DIFFERENT OBJECTS
+let user1 = {
+  name: "Aman",
+  show() {
+    console.log(this.name);
+  }
+};
+
+let user2 = {
+  name: "Rahul",
+  show() {
+    console.log(this.name);
+  }
+};
+
+user1.show();  // Aman 
+user2.show();  // Rahul
+//this automatically points to the object calling the method.
+
+// this IN REGULAR FUNCTION
+function test() {
+  console.log(this);
 }
+
+test();
+// In browsers, this usually becomes the global object (window).
+
+
+// this IN ARROW FUNCTIONS
+/*
+Arrow functions do NOT create their own this.
+
+Instead, they use this from the surrounding (parent) scope.
+
+This is called lexical this.
+*/
+// 1. Arrow Function as Object Method
+let person = {
+  name: "Kushagra",
+
+  greet: () => {
+    console.log(this.name);
+  }
+};
+
+person.greet();  // undefined
+
+// Why?
+/*
+Because arrow functions ignore the object.
+
+They do NOT say:
+
+---> Who called me?
+
+Instead they say:
+
+---> What is my parent's this?
+
+The arrow function checks the outer scope.
+
+In browsers:
+
+---> this === window
+
+So:
+
+---> this.name
+
+means:
+
+---> window.name
+
+which is usually undefined.
+*/
+
+// 2. Correct Use of Arrow Functions
+let person = {
+  name: "Kushagra",
+
+  greet: function() {
+
+    let arrow = () => {
+      console.log(this.name);
+    };
+
+    arrow();
+  }
+};
+
+person.greet();   // Kushagra
+
+// Why does this work?
+/*
+Inside:
+
+---> person.greet()
+
+we get:
+
+---> this === person
+
+The arrow function borrows this this.
+
+So inside arrow function:
+
+---> this === person
+
+too.
+*/
 
 // try and catch:
 // The try statement allows you to define a block of code to be tested for errors while it is being exeuted.
