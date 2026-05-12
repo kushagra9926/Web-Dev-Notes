@@ -392,3 +392,25 @@ let min = nums_12.reduce((acc, curr) => {
     return acc > curr ? curr : acc;
 });
 console.log(min);
+
+// Default Parameters
+/*
+Default parameters allow you to give a function parameter a default value.
+
+If no argument is passed, the default value is used.
+
+SYNTAX:
+function functionName(parameter = defaultValue) { }
+*/
+
+// Basic Example
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet();
+// Output: 
+/*
+Hello Guest
+Because no value was passed.
+*/
