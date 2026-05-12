@@ -414,3 +414,32 @@ greet();
 Hello Guest
 Because no value was passed.
 */
+
+// Passing a Value
+function greet(name = "Guest") {
+  console.log("Hello " + name);
+}
+
+greet("John");
+// Output: 
+/*
+Hello John
+Passed value overrides default value.
+*/
+
+// Multiple Default Parameters
+function add(a = 0, b = 0) {
+  return a + b;
+}
+
+console.log(add());
+console.log(add(5));
+console.log(add(5, 3));
+// Output: 
+/*
+0
+5
+8
+*/
+
+// 
