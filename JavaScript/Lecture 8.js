@@ -245,3 +245,67 @@ console.log(result_5);
 /*
 true
 */
+
+// Some
+/*
+some() checks whether at least one element in an array satisfies a condition.
+
+---> Returns true → if ONE or more elements pass
+---> Returns false → if ALL elements fail
+
+SYNTAX:
+array.some((element, index, array) => { });
+
+The callback should return:
+
+---> true
+---> false
+*/
+
+// BASIC EXAMPLE
+let nums_7 = [1, 3, 4, 7];
+
+let result_6 = nums_7.some((num) => {
+  return num % 2 === 0;
+});
+
+console.log(result_6);
+// Output: 
+/*
+true
+Because 4 is even.
+*/
+
+// Important Point: some() returns a BOOLEAN. Not an array.
+
+// EXAMPLE WITH INDEX
+let nums_8 = [10, 20, 30];
+
+let result_7 = nums_8.some((value, index) => {
+  console.log(index, value);
+  return value > 15;
+});
+
+console.log(result_7);
+// Output: 
+/*
+0 10
+1 20
+true
+*/
+
+// some() WITH OBJECTS
+let users = [
+  { name: "John", isAdmin: false },
+  { name: "Sam", isAdmin: true },
+  { name: "Alex", isAdmin: false }
+];
+
+let result = users.some(user => user.isAdmin);
+
+console.log(result);
+
+// Output: 
+/*
+true
+*/
