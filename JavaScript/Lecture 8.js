@@ -376,3 +376,19 @@ let total = cart.reduce((acc, product) => {
 
 console.log(total);
 // Output : 1600
+
+// Practice Qs
+// Check if all numbers in our array are multiple of 10 or not.
+let nums_11 = [10, 20, 30, 40];
+
+let ans = nums_11.every((el) => {
+    return el % 10 == 0;
+});
+console.log(ans);
+// Create a function to find the min number in an array.
+let nums_12 = [10, 20, 30, 40, 5];
+
+let min = nums_12.reduce((acc, curr) => {
+    return acc > curr ? curr : acc;
+});
+console.log(min);
