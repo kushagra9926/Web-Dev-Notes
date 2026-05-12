@@ -309,3 +309,12 @@ console.log(result);
 /*
 true
 */
+
+// Difference Between some() and every()
+/*
+some()	                                every()
+At least one must pass	             All must pass
+Flexible check	                     Strict check
+*/
+
+// Reduce
