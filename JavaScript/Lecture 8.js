@@ -312,9 +312,67 @@ true
 
 // Difference Between some() and every()
 /*
-some()	                                every()
-At least one must pass	             All must pass
-Flexible check	                     Strict check
+| some()                 | every()       |
+| ---------------------- | ------------- |
+| At least one must pass | All must pass |
+| Flexible check         | Strict check  |
 */
 
 // Reduce
+/*
+reduce() is used to reduce an array into a single value.
+
+That single value can be:
+
+---> sum
+---> product
+---> object
+---> array
+---> count
+---> string
+---> anything
+
+SYNTAX:
+array.reduce((accumulator, currentValue, index, array) => { }, initialValue);
+
+Most Important Concepts
+| Parameter    | Meaning                            |
+| ------------ | ---------------------------------- |
+| accumulator  | Stores result after each iteration |
+| currentValue | Current array element              |
+| initialValue | Starting value of accumulator      |
+*/
+
+// Basic Example → Sum of Array
+let nums_9 = [1, 2, 3, 4];
+
+let sum = nums_9.reduce((acc, curr) => {
+  return acc + curr;
+}, 0);
+
+console.log(sum);
+// Output : 10
+
+// Finding Maximum Value
+let nums_10 = [5, 2, 9, 1];
+
+let max = nums_10.reduce((acc, curr) => {
+  return curr > acc ? curr : acc;
+});
+
+console.log(max);
+// Output: 9
+
+// reduce() with Objects
+let cart = [
+  { item: "Phone", price: 500 },
+  { item: "Laptop", price: 1000 },
+  { item: "Mouse", price: 100 }
+];
+
+let total = cart.reduce((acc, product) => {
+  return acc + product.price;
+}, 0);
+
+console.log(total);
+// Output : 1600
