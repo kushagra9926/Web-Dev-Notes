@@ -92,11 +92,11 @@ console.log(doubled);
 // EXAMPLE WITH INDEX
 let fruits_2 = ["apple", "banana", "mango"];
 
-let result = fruits_2.map((fruit, index) => {
+let result_1 = fruits_2.map((fruit, index) => {
   return `${index} : ${fruit}`;
 });
 
-console.log(result);
+console.log(result_1);
 // Output: 
 /*
 [
@@ -120,4 +120,64 @@ console.log(names);
 // Output: 
 /*
 ["John", "Sam"]
+*/
+
+// Filter
+/*
+filter() is used to create a new array containing only the elements that pass a condition.
+
+SYNTAX:
+array.filter((element, index, array) => { });
+
+The callback must return:
+
+true → keep element
+false → remove element
+ */
+
+// BASIC EXAMPLE
+let nums_3 = [1, 2, 3, 4];
+
+let even = nums_3.filter((num) => {
+  return num % 2 === 0;
+});
+console.log(nums_3);
+console.log(even);
+// Output: 
+/*
+[1, 2, 3, 4]
+[2, 4]
+*/
+
+// Important Point: filter() does NOT change original array.
+
+// EXAMPLE WITH INDEX
+let nums_4 = [10,20,30];
+
+let result_2 = nums_4.filter((value, index) => {
+  return index !== 1;
+});
+
+console.log(result_2);
+// Output: 
+/*
+[10, 30]
+*/
+
+// filter() WITH OBJECTS
+let users_3 = [
+  { name: "John", age: 20 },
+  { name: "Sam", age: 17 },
+  { name: "Alex", age: 25 }
+];
+
+let adults = users_3.filter(user => user.age >= 18);
+
+console.log(adults);
+// Output: 
+/*
+[
+  { name: "John", age: 20 },
+  { name: "Alex", age: 25 }
+]
 */
