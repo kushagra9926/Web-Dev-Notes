@@ -181,3 +181,67 @@ console.log(adults);
   { name: "Alex", age: 25 }
 ]
 */
+
+// Every
+/*
+every() checks whether all elements in an array satisfy a condition.
+
+---> Returns true → if ALL elements pass
+---> Returns false → if even ONE element fails
+
+SYNTAX: 
+array.every((element, index, array) => { });
+
+The callback should return:
+
+---> true
+---> false
+*/
+
+// BASIC EXAMPLE
+let nums_5 = [2, 4, 6, 8];
+
+let result_3 = nums_5.every((num) => {
+  return num % 2 === 0;
+});
+
+console.log(result_3);
+// Output: 
+/*
+true
+Because ALL numbers are even.
+*/
+
+// Important Point: every() returns a BOOLEAN. Not an array.
+
+// EXAMPLE WITH INDEX
+let nums_6 = [10, 20, 30];
+
+let result_4 = nums_6.every((value, index) => {
+  console.log(index, value);
+  return value > 5;
+});
+
+console.log(result_4);
+// Output:
+/*
+0 10
+1 20
+2 30
+true
+*/
+
+// every() WITH OBJECTS
+let users_4 = [
+  { name: "John", age: 20 },
+  { name: "Sam", age: 25 },
+  { name: "Alex", age: 30 }
+];
+
+let result_5 = users_4.every(user => user.age >= 18);
+
+console.log(result_5);
+// Output:
+/*
+true
+*/
