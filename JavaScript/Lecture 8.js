@@ -23,9 +23,9 @@ num_1.forEach((num) => {
 */
 
 // EXAMPLE WITH INDEX
-let fruits = ["apple", "banana", "mango"];
+let fruits_1 = ["apple", "banana", "mango"];
 
-fruits.forEach((fruit, index) => {
+fruits_1.forEach((fruit, index) => {
     console.log(index, fruit);
 });
 // Output:
@@ -49,13 +49,13 @@ num_2.forEach((value, index, arr) => {
 */
 
 // forEach WITH OBJECTS
-let users = [
+let user_1 = [
   {name: "John"},
   {name: "Sam"},
   {name: "Alex"}
 ];
 
-users.forEach((user) => {
+user_1.forEach((user) => {
   console.log(user.name);
 });
 //Output:
@@ -90,9 +90,9 @@ console.log(doubled);
 // Important Point: map() does NOT change original array.
 
 // EXAMPLE WITH INDEX
-let fruits = ["apple", "banana", "mango"];
+let fruits_2 = ["apple", "banana", "mango"];
 
-let result = fruits.map((fruit, index) => {
+let result = fruits_2.map((fruit, index) => {
   return `${index} : ${fruit}`;
 });
 
@@ -107,12 +107,12 @@ console.log(result);
 */
 
 // map() WITH OBJECTS
-let users = [
+let users_2 = [
   { name: "John", age: 20 },
   { name: "Sam", age: 25 }
 ];
 
-let names = users.map((user) => {
+let names = users_2.map((user) => {
   return user.name;
 });
 
