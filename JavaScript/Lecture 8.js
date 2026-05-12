@@ -556,3 +556,40 @@ let nums_14 = [1,2,3];
 
 console.log(Math.max(...nums_14));
 // Output: 3
+
+// Rest
+/*
+The rest operator (...) is used to collect multiple values into a single array.
+
+It is mainly used:
+
+---> in function parameters
+---> array destructuring
+---> object destructuring
+
+SYNTAX: 
+...name
+*/
+
+// 1. Rest in Function Parameters
+// Basic Example
+function sum_1(...nums) {
+  console.log(nums);
+}
+
+sum_1(1, 2, 3);
+// Output: 
+/*
+[1, 2, 3]
+*/
+
+// Sum Example
+function sum_2(...nums) {
+
+  let total = nums.reduce((acc, curr) => acc + curr, 0);
+
+  console.log(total);
+}
+
+sum_2(1,2,3,4);
+// Output: 10
