@@ -442,4 +442,117 @@ console.log(add(5, 3));
 8
 */
 
-// 
+// Spread 
+/*
+The spread operator (...) is used to expand or spread out:
+
+---> arrays
+---> objects
+---> strings
+
+into individual elements.
+
+SYNTAX: 
+...
+*/
+
+// 1. Spread with Arrays
+// Copy Array   
+let arr1 = [1, 2, 3];
+
+let arr2 = [...arr1];
+
+console.log(arr2);
+// Output: 
+/*
+[1, 2, 3]
+*/
+
+// Why Use Spread?  
+/*
+Without spread:
+
+let arr1 = [1,2,3];
+
+let arr2 = arr1;
+
+This copies reference, NOT actual array.
+
+Changing one affects the other.
+*/
+
+// Merge Arrays
+let a = [1,2];
+let b = [3,4];
+
+let result_8 = [...a, ...b];
+
+console.log(result_8);
+// Output: 
+/*
+[1,2,3,4]
+*/
+
+// Add Elements While Copying
+let nums_13 = [2,3];
+
+let result_9 = [1, ...nums_13, 4];
+
+console.log(result_9);
+// Output: 
+/*
+[1,2,3,4]
+*/
+
+// 2. Spread with Objects
+// Copy Object
+let user_5 = {
+  name: "John",
+  age: 20
+};
+
+let copy = { ...user_5 };
+
+console.log(copy);
+// Output: 
+/*
+{
+  name: "John",
+  age: 20
+}
+*/
+
+// Merge Objects
+let obj1 = { a: 1 };
+let obj2 = { b: 2 };
+
+let result_10 = {
+  ...obj1,
+  ...obj2
+};
+
+console.log(result_10);
+// Output: 
+/*
+{
+  a: 1,
+  b: 2
+}
+*/
+
+// 3. Spread with Strings
+let str = "hello";
+
+let chars = [...str];
+
+console.log(chars);
+// Output: 
+/*
+["h", "e", "l", "l", "o"]
+*/
+
+// 4. Spread in Function Calls
+let nums_14 = [1,2,3];
+
+console.log(Math.max(...nums_14));
+// Output: 3
