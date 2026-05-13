@@ -404,11 +404,12 @@ function functionName(parameter = defaultValue) { }
 */
 
 // Basic Example
-function greet(name = "Guest") {
+function greet_1(name = "Guest") {
   console.log("Hello " + name);
 }
 
-greet();
+greet_1();
+
 // Output: 
 /*
 Hello Guest
@@ -416,11 +417,11 @@ Because no value was passed.
 */
 
 // Passing a Value
-function greet(name = "Guest") {
+function greet_2(name = "Guest") {
   console.log("Hello " + name);
 }
 
-greet("John");
+greet_2("John");
 // Output: 
 /*
 Hello John
@@ -593,3 +594,63 @@ function sum_2(...nums) {
 
 sum_2(1,2,3,4);
 // Output: 10
+
+// Fixed + Rest Parameters
+function greet_3(message, ...names) {
+
+  console.log(message);
+  console.log(names);
+
+}
+
+greet_3("Hello", "John", "Sam", "Alex");
+// Output: 
+/*
+Hello
+["John", "Sam", "Alex"]
+*/
+
+// Important Rule: Rest parameter must be LAST parameter.
+/*
+✅ Correct:
+
+function test(a, ...b) { }
+
+❌ Wrong:
+
+function test(...a, b) { }
+Error occurs.
+*/
+
+// 2. Rest in Array Destructuring
+let nums_15 = [1,2,3,4];
+
+let [first, ...rest_1] = nums_15;
+
+console.log(first);
+console.log(rest_1);
+// Output: 
+/*
+1
+[2,3,4]
+*/
+
+// 3. Rest in Object Destructuring
+let user_6 = {
+  name: "John",
+  age: 20,
+  city: "Delhi"
+};
+
+let { name, ...rest_2 } = user_6;
+
+console.log(name);
+console.log(rest_2);
+// Output:
+/*
+John
+{
+  age: 20,
+  city: "Delhi"
+}
+*/
