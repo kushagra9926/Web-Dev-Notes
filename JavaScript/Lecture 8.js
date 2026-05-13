@@ -654,3 +654,106 @@ John
   city: "Delhi"
 }
 */
+
+// Destructuring
+/*
+Destructuring means:
+Extracting values from arrays or objects into variables easily.
+Introduced in ES6.
+*/
+
+// 1. Array Destructuring
+// Without Destructuring
+let nums_16 = [10, 20, 30];
+
+let a_1 = nums_16[0];
+let b_1 = nums_16[1];
+
+console.log(a_1);
+console.log(b_1);
+// Output: 
+/*
+10
+20
+*/
+
+// With Destructuring
+let nums_17 = [10, 20, 30];
+
+let [a_2, b_2] = nums_17;
+
+console.log(a_2);
+console.log(b_2);
+// Output: 
+/*
+10
+20
+*/
+
+// Skip Values
+let nums_18 = [10, 20, 30];
+
+let [a_3, , c_3] = nums_18;
+
+console.log(a_3);
+console.log(c_3);
+// Output: 
+/*
+10
+30
+*/
+
+// 2. Object Destructuring
+let user_7 = {
+  name_1: "John",
+  age_1: 20
+};
+
+let { name_1, age_1 } = user_7;    // Variable Name Must Match Property. Works because property name matches
+
+console.log(name_1);
+console.log(age_1);
+// Output: 
+/*
+John
+20
+*/
+
+// Important Difference
+/*
+Array destructuring uses:
+[]
+
+Object destructuring uses:
+{}
+*/
+
+// Rename Variables
+let user_8 = {
+  name_2: "John"
+};
+
+let { name_2: userName } = user_8;
+
+console.log(userName);
+// Output: 
+/*
+John
+*/
+
+// Nested Destructuring
+let user_9 = {
+  name_3: "John",
+  address_1: {
+    city: "Delhi"
+  }
+};
+
+let {
+  address_1: { city }
+} = user_9;
+
+console.log(city);
+// Output: Delhi
+
+
