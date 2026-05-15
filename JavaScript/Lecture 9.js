@@ -15,7 +15,7 @@ JavaScript can use the DOM to:
 
 // Selecting Elements
 
-// getElementById: 
+// getElementById
 /*
 To select an element by ID in JavaScript, we use:   
 document.getElementById("idName")
