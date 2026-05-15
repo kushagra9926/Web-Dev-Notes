@@ -104,3 +104,69 @@ Change content:
 </> JavaScript
 paras[0].innerText = "Hi";
 */
+
+// Query Selectors
+/*
+querySelector() and querySelectorAll() are modern DOM methods used to select elements using CSS selectors.
+
+1. querySelector()
+Selects the first matching element.
+
+SYNTAX:
+</> JavaScript
+document.querySelector("selector")
+
+Example:
+</> HTML
+<h1 class="title">Hello</h1>    
+
+</> JavaScript
+const heading = document.querySelector(".title");
+console.log(heading);
+
+Select by ID
+</> JavaScript
+document.querySelector("#title")
+
+Select by Class
+</> JavaScript
+document.querySelector(".box")
+
+Select by Tag
+</> JavaScript
+document.querySelector("p")
+
+2. querySelectorAll()
+Selects all matching elements.
+
+SYNTAX:
+</> JavaScript
+document.querySelectorAll("selector")
+
+Example:
+</> HTML
+<p class="text">One</p>
+<p class="text">Two</p>
+
+</> JavaScript
+const items = document.querySelectorAll(".text");
+console.log(items);
+
+Output:
+NodeList(2)
+
+Access elements:
+</> JavaSript
+console.log(items[0]);
+console.log(items[1]);
+
+Important
+querySelector uses CSS selector symbols:
+
+| Selector | Meaning  |
+| -------- | -------- |
+| `#id`    | ID       |
+| `.class` | Class    |
+| `tag`    | Tag name |
+
+*/
