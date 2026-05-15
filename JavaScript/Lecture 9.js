@@ -71,4 +71,36 @@ Change text:
 items[0].innerText = "Hi";
 */
 
+// let smallImages = document.getElementsByClassName("oldImg");
+// for(let i = 0; i < smallImages.length; i++){
+//     smallImages[i].src = "assets/spiderman_img.png";
+//     console.log(`value of image no ${i} is changed.`);
+// }
 
+// getElementByTagName
+/*
+</> JavaScript
+document.getElementsByTagName("tagName")
+It selects elements using their HTML tag name.
+
+Example:
+</> HTML
+<p>Hello</p>
+<p>World</p>
+
+</> JavaScript 
+const paras = document.getElementsByTagName("p");
+console.log(paras);
+
+Output:
+HTMLCollection(2)
+
+Access elements:
+</> JavaScript
+console.log(paras[0]);
+console.log(paras[1]);
+
+Change content:
+</> JavaScript
+paras[0].innerText = "Hi";
+*/
