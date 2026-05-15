@@ -12,7 +12,9 @@ JavaScript can use the DOM to:
 ---> Create animations
 */
 
+
 // Selecting Elements
+
 // getElementById: 
 /*
 To select an element by ID in JavaScript, we use:   
@@ -37,4 +39,36 @@ Now the page becomes:
 </> HTML
 <h1 id="title">Welcome</h1>
 */
+
+// getElementByClassName
+/*
+getElementsByClassName() is used to select elements using a class name.
+
+SYNTAX:
+</> JavaScript
+document.getElementsByClassName("className")
+
+Example: 
+</> HTML
+<p class="text">Hello</p>
+<p class="text">World</p>
+
+</> JavaScript
+const items = document.getElementsByClassName("text");
+console.log(items);
+
+Output:
+HTMLCollection(2)
+Because multiple elements can have the same class, it returns a collection (array-like object).
+
+Access elements using index:
+</> JavaScript
+console.log(items[0]);
+console.log(items[1]);
+
+Change text:
+</> JavaScript
+items[0].innerText = "Hi";
+*/
+
 
