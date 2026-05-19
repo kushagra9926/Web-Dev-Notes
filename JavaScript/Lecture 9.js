@@ -168,5 +168,75 @@ querySelector uses CSS selector symbols:
 | `#id`    | ID       |
 | `.class` | Class    |
 | `tag`    | Tag name |
+*/
+
+// Using Properties & Methods
+/*
+1. innerText
+Gets or sets the visible text inside an element.
+
+---> Respects CSS styling (display: none text is ignored)
+---> Ignores HTML tags
+---> Shows only what user can see
+
+</> HTML
+<div id="box">
+  Hello
+  <span style="display:none">Hidden Text</span>
+  <b>World</b>
+</div>
+
+</> JavaScript
+let data = document.getElementById("box").innerText;
+console.log(data);
+
+Output: 
+Hello World 
+
+2. textContent
+Gets or sets all text inside an element.
+
+---> Ignores HTML tags
+---> Includes hidden text also
+---> Faster than innerText
+
+</> HTML
+<div id="box">
+  Hello
+  <span style="display:none">Hidden Text</span>
+  <b>World</b>
+</div>
+
+</> JavaScript 
+let data = document.getElementById("box").textContent;
+console.log(data);
+
+Output: 
+Hello Hidden Text World
+
+3. innerHTML
+innerHTML returns the complete HTML inside an element.
+
+It includes:
+
+---> text
+---> HTML tags
+---> nested elements
+
+This property is mostly used when adding dynamic HTML.
+
+</> HTML
+<div id="box">
+  Hello <b>World</b>
+</div>
+
+</> JavaScript
+let data = document.getElementById("box").innerHTML;
+console.log(data);
+
+Output: 
+Hello <b>World</b>
+
 
 */
+
