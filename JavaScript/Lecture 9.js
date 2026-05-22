@@ -236,7 +236,46 @@ console.log(data);
 
 Output: 
 Hello <b>World</b>
+*/
 
+// Manipulating Attributes
+/*
+getAttribute():
+Used to get/read the value of an attribute.
 
+Syntax:
+</> JavaScript
+obj.getAttribute("attributeName");
+
+Example:
+</> HTML
+<a id="link" href="https://google.com">Google</a>
+
+</> JavaScript
+const obj = document.getElementById("link");
+console.log(obj.getAttribute("href"));
+
+Output:
+</> JavaScript
+https://google.com
+
+setAttribute():
+Used to set/change/add an attribute.
+
+Syntax:
+</> JavaScript
+obj.setAttribute("attributeName", "value");
+
+Example:
+</> HTML
+<img id="pic" src="old.jpg">
+
+</> JavaScript
+const obj = document.getElementById("pic");
+obj.setAttribute("src", "new.jpg");
+
+Now image source becomes:
+</> HTML
+<img src="new.jpg">
 */
 
