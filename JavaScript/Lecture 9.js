@@ -279,3 +279,7 @@ Now image source becomes:
 <img src="new.jpg">
 */
 
+// Manipulating Style
+/*
+
+*/
