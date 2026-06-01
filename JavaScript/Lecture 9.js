@@ -365,6 +365,34 @@ Example
 </> JavaScript
 let para = document.getElementById("para");
 console.log(para.previousElementSibling);
+*/
+
+// Adding Elements
+/*
+You can add new HTML elements to a webpage using DOM methods.
+
+1. Create an Element
+</> JavaScript
+let newPara = document.createElement("p");
+
+2. Add Content
+</> JavaScript
+newPara.textContent = "Hello World!";
+
+3. Append to the Page
+</> JavaScript
+document.body.appendChild(newPara);
+
+Common Methods:
+
+append()
+Adds one or more elements at the end.
+
+appendChild()
+Adds a single node at the end.
+
+prepend()
+Adds an element at the beginning.
 
 
 */
