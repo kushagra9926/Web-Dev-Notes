@@ -320,3 +320,51 @@ box.classList.toggle("active");
 <JavaScript> 
 box.classList.contains("active");
 */
+
+// Navigation
+/*
+Navigation on a page means moving the user to different sections of the same webpage.
+
+Parent Element
+A parent element is the HTML element that directly contains another element.
+
+Example
+</> HTML
+<div id="parent">
+  <p id="child">Hello</p>
+</div>
+
+</> JavaScript
+let child = document.getElementById("child");
+console.log(child.parentElement);
+
+Children element
+The children property returns all child elements of an HTML element as an HTMLCollection.
+
+Example
+</> HTML
+<div id="parent">
+  <p>First Child</p>
+  <h2>Second Child</h2>
+  <button>Third Child</button>
+</div>
+
+</> JavaScript
+let parent = document.getElementById("parent");
+console.log(parent.children);
+
+previousElementSibling & nextElementSibling element
+previousElementSibling returns the previous sibling element of a specified element.
+
+Example
+</> HTML
+<div>First</div>
+<p id="para">Second</p>
+<button>Third</button>
+
+</> JavaScript
+let para = document.getElementById("para");
+console.log(para.previousElementSibling);
+
+
+*/
