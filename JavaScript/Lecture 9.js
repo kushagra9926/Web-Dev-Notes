@@ -281,5 +281,42 @@ Now image source becomes:
 
 // Manipulating Style
 /*
+Manipulating style in JavaScript means changing the CSS styles of HTML elements dynamically.
 
+Examples:
+
+Change text color
+</> JavaScript
+document.getElementById("demo").style.color = "red";
+
+Change background color
+</> JavaScript
+document.getElementById("demo").style.backgroundColor = "yellow";
+*/
+
+// Using classList
+/*
+classList is used to add, remove, toggle, or check CSS classes on an HTML element.
+
+Syntax
+</> JavaScript
+element.classList
+
+1. Add a class
+<JavaScript> 
+let box = document.getElementById("box");
+box.classList.add("active");
+
+2. Remove a class
+<JavaScript> 
+box.classList.remove("active");
+
+3. Toggle a class
+Adds the class if it doesn't exist; removes it if it does.
+<JavaScript> 
+box.classList.toggle("active");
+
+4. Check if a class exists
+<JavaScript> 
+box.classList.contains("active");
 */
