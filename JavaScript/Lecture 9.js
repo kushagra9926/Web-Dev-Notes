@@ -394,5 +394,38 @@ Adds a single node at the end.
 prepend()
 Adds an element at the beginning.
 
+insertAdjacentElement()
+This method inserts an existing HTML element at a specified position relative to another element.
+
+Syntax
+</> JavaScript
+element.insertAdjacentElement(position, newElement);
+
+Positions
+| Position        | Meaning                                |
+| --------------- | -------------------------------------- |
+| `"beforebegin"` | Before the element itself              |
+| `"afterbegin"`  | Inside the element, before first child |
+| `"beforeend"`   | Inside the element, after last child   |
+| `"afterend"`    | After the element itself               |
+
+Example
+
+</> HTML
+<div id="box">Hello</div>
+
+</> JavaScript
+let box = document.getElementById("box");
+
+let p = document.createElement("p");
+p.textContent = "New Paragraph";
+
+box.insertAdjacentElement("afterend", p);
+
+Result:
+</> HTML
+<div id="box">Hello</div>
+<p>New Paragraph</p>
+
 
 */
