@@ -426,6 +426,35 @@ Result:
 </> HTML
 <div id="box">Hello</div>
 <p>New Paragraph</p>
+*/
 
+// Removing Elements
+/*
+You can remove HTML elements from the DOM using the remove() method.
+
+1. Remove an Element
+</> HTML
+<p id="demo">Hello World</p>
+
+</> JavaScript
+let para = document.getElementById("demo");
+para.remove();
+The <p> element will be removed from the page.
+
+2. Remove a Child Element
+</> HTML
+<div id="parent">
+  <p id="child">Hello</p>
+</div>
+
+</> JavaScript
+let parent = document.getElementById("parent");
+let child = document.getElementById("child");
+
+parent.removeChild(child);
+*/
+
+// Practice Question
+/*
 
 */
