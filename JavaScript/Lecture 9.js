@@ -463,4 +463,38 @@ Add the following elements to the container using only JavaScript and the DOM me
     ● another <h1> that says "I'm in a div"
     ● a <p> that says "ME TOO!"
 */
+let para1 = document.createElement('p');
+para1.textContent = "Hey I'm red!";
+para1.style.color = 'red';
+document.body.append(para1);
+
+let para2 = document.createElement('p');
+para2.innerText = "Hey I'm red!";
+document.querySelector('body').append(para2);
+para2.classList.add("red");
+
+let heading1 = document.createElement('h3');
+heading1.textContent = "I'm a blue h3!";
+heading1.style.color = 'blue';
+document.body.append(heading1);
+
+let heading2 = document.createElement('h3');
+heading2.innerText = "I'm a blue h3!";
+document.querySelector('body').append(heading2);
+heading2.classList.add("blue");
+
+let div = document.createElement("div");
+let h1 = document.createElement("h1");
+let p = document.createElement("p");
+
+h1.innerText = "I'm in a div";
+p.innerText = "ME TOO!";
+
+div.append(h1);
+div.append(p);
+
+div.classList.add("box");
+document.querySelector("body").append(div);
+
+
 
