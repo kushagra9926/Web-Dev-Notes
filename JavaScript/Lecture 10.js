@@ -10,9 +10,16 @@ DOM Events (Document Object Model Events) are actions or occurrences that happen
 /*
 The onclick event is triggered when a user clicks on an HTML element.
 */
+// onmouseenter Event
+/*
+onmouseenter is triggered when the mouse pointer enters an element.
+*/
 let btns = document.querySelectorAll("button");
 for(btn of btns){
     btn.onclick = sayHello;
+    btn.onmouseenter = function(){
+        console.log("you entered a button");
+    }
 }
 
 // btn.onclick = function (){
@@ -23,4 +30,5 @@ for(btn of btns){
 function sayHello(){
     alert("Hello!");
 } 
+
 
