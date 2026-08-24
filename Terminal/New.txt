@@ -1,0 +1,51 @@
+Command Line - It is a text-based way to interact with a computer by typing commands instead of using a graphical interface (GUI).
+Terminal - It is an application that lets you interact with your computer using the command line.
+Console - It is an interface where you can enter commands or view output from a program/system.
+Shell - It is a program that interprets the commands you type and tells the operating system what to do.
+Bash - It is a type of shell—a program that reads the commands you type and executes them.
+~ - Home directory (main folder where all files are stored)
+Basics: 
+
+ls - list files
+pwd - Shows current directory
+clear - Clears the terminal
+
+Navigation: 
+Inside & Outside Directories
+
+cd - change directory
+cd.. - back button
+
+Paths: 
+Absolute & Relative
+
+cd Desktop/Delta  (relative path)
+cd/Users/Kushagra/Desktop  (absolute path)
+
+/ - root directory (is the top-most directory in a Linux/Unix file system.)
+~ - home directory (is the personal directory assigned to a user.)
+
+Making Directories: 
+mkdir - make directory
+
+Flags: 
+It is an option added to a command to change or control how that command behaves.
+manual Command: 
+man ls - give info about ls command
+man mkdir - give info about mkdir command 
+
+In git bash 
+command is "ls --help"
+q - to quit.
+
+Touch Command:
+Used to create files
+
+touch index.html
+touch app.js
+touch abc.txt 
+
+Deleting Files & Folders:
+rm - removes files
+rmdir - removes empty folders
+rm-rf - removes any folders 
