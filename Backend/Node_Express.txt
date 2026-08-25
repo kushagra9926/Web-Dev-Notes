@@ -1,0 +1,55 @@
+| Library                           | Framework                                 |
+| --------------------------------- | ----------------------------------------- |
+| You control the flow              | Framework controls the flow               |
+| You call the library              | Framework calls your code                 |
+| Usually solves a specific problem | Usually provides an application structure |
+| More flexibility                  | More conventions/structure                |
+| Ex: axios                         | Ex: Express                               |
+
+Express
+It is a web framework for Node.js. It makes it easier to create web servers, APIs, and backend applications.
+
+1. Install Express
+
+First create a Node.js project:
+
+npm init -y
+
+Then install Express:
+
+npm install express
+
+2. Create a server
+
+Create app.js:
+
+const express = require("express");
+const app = express();
+
+let port = 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+Run:
+node app.js
+
+Now your server is running on:
+http://localhost:3000
+
+// Port: A port is a logical number used to identify a particular network service running on a computer.
+
+app.use(): It is used to add middleware to an Express application.
+Middleware is a function that runs between receiving a request and sending the response.
+
+const express = require("express");
+const app = express();
+
+let port = 3000;
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
+
+app.use((req, res) => {
+    console.log("request received");
+});
