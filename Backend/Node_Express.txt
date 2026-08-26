@@ -53,3 +53,213 @@ app.listen(port, () => {
 app.use((req, res) => {
     console.log("request received");
 });
+
+Sending a response:
+In Express, we use the res (response) object to send a response back to the client.
+
+The most basic method:
+
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
+app.listen(3000);
+
+When you open:
+http://localhost:3000/
+
+You receive:
+Hello World!
+
+Sending HTML:
+app.get("/", (req, res) => {
+    res.send("<h1>Hello World</h1>");
+});
+
+Express sends the HTML to the browser.
+
+Routing: It means deciding what response should be given when a client requests a particular URL and HTTP method.
+For example:
+
+GET /          → Home page
+GET /about     → About page
+GET /contact   → Contact page
+
+app.get(): It is used to define a route that responds to HTTP GET requests.
+Basic syntax
+app.get(path, handler);
+
+Basic Routing
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Home Page");
+});
+
+app.get("/about", (req, res) => {
+    res.send("About Page");
+});
+
+app.get("/contact", (req, res) => {
+    res.send("Contact Page");
+});
+
+app.listen(3000);
+
+If you visit:
+http://localhost:3000/
+
+Response:
+Home Page
+
+If you visit:
+http://localhost:3000/about
+
+Response:
+About Page
+
+HTTP Methods in Routing
+Express provides different methods for different HTTP requests:
+
+app.get("/users", (req, res) => {
+    res.send("Get Users");
+});
+
+app.post("/users", (req, res) => {
+    res.send("Create User");
+});
+
+app.put("/users", (req, res) => {
+    res.send("Update User");
+});
+
+app.delete("/users", (req, res) => {
+    res.send("Delete User");
+});
+
+Method	Common purpose
+
+| Method   | Common purpose        |
+| -------- | --------------------- |
+| `GET`    | Get data              |
+| `POST`   | Create data           |
+| `PUT`    | Update data           |
+| `PATCH`  | Partially update data |
+| `DELETE` | Delete data           |
+
+Nodemon: Nodemon is a development tool that automatically restarts your Node.js application whenever you make changes to your code.
+         Without Nodemon, you would have to stop and restart the server manually every time you modify a file.  
+
+Install Nodemon:
+npm install -g nodemon 
+
+Example
+
+Suppose app.js contains:
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
+
+app.listen(3000, () => {
+    console.log("Server running on 3000");
+});
+
+Start with:
+nodemon app.js
+
+When you change:
+
+res.send("Hello Node.js");
+and save the file, Nodemon automatically restarts the server.
+
+Path Parameter: It is a variable part of a URL. It is used when you want to send a specific value through the URL.
+Basic example
+app.get("/user/:id", (req, res) => {
+    res.send(`User ID: ${req.params.id}`);
+});
+
+Here:
+
+/user/:id
+      ↑
+ Path parameter
+
+If you visit:
+http://localhost:3000/user/101
+
+then:
+req.params.id
+
+will contain:
+101
+
+So the response will be:
+
+User ID: 101
+Another example
+app.get("/product/:id", (req, res) => {
+    console.log(req.params.id);
+    res.send("Product found");
+});
+
+Request:
+/product/500
+
+Output:
+500
+
+Query String: A query string is the part of a URL that comes after ?. It is used to send additional information to the server, usually for searching, filtering, sorting, or pagination.
+Example
+http://localhost:3000/search?name=Kushagra&age=20
+
+Here:
+?name=Kushagra&age=20
+
+is the query string.
+name=Kushagra → first query parameter
+age=20 → second query parameter
+& → separates parameters
+
+Accessing Query Strings in Express
+
+Use:
+req.query
+
+Example:
+
+app.get("/search", (req, res) => {
+    console.log(req.query);
+
+    res.send(`Hello ${req.query.name}`);
+});
+
+If the URL is:
+/search?name=Kushagra
+
+then:
+req.query.name
+
+gives:
+Kushagra
+
+Multiple query parameters
+
+app.get("/search", (req, res) => {
+    const name = req.query.name;
+    const age = req.query.age;
+
+    res.send(`Name: ${name}, Age: ${age}`);
+});
+
+URL:
+/search?name=Kushagra&age=20
+
+Response:
+Name: Kushagra, Age: 20
+
