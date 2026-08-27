@@ -1,0 +1,258 @@
+Templating: 
+Templating means creating HTML pages dynamically by combining:
+
+HTML structure
+Data from the server
+
+Instead of writing separate HTML for every user/product, you create a template and insert dynamic data into it.
+
+EJS:
+EJS is a templating engine commonly used with Node.js and Express to create dynamic HTML pages.
+
+1. Install EJS
+npm install ejs
+
+2. Configure EJS with Express
+const express = require("express");
+
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+    res.render("home", {
+        name: "Kushagra"
+    });
+});
+
+app.listen(3000);
+3. Create the EJS file
+
+Create:
+views/
+└── home.ejs
+
+Inside home.ejs:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Hello <%= name %></h1>
+
+</body>
+</html>
+
+When you visit:
+http://localhost:3000/
+
+The browser receives:
+Hello Kushagra
+
+path.join: 
+It is mainly used to tell Express the exact location of the views directory.
+
+Suppose your project is:
+
+myproject/
+│
+├── app.js
+├── package.json
+└── views/
+    └── home.ejs
+
+In app.js:
+
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.set("views", path.join(__dirname, "views"));
+
+app.get("/", (req, res) => {
+    res.render("home");
+});
+
+app.listen(3000);
+
+What does it mean?
+
+__dirname gives the absolute path of the directory containing app.js.
+
+For example:
+C:\Users\Kushagra\myproject
+
+Then:
+path.join(__dirname, "views")
+
+combines them:
+C:\Users\Kushagra\myproject\views
+
+So Express now knows:
+"My EJS templates are inside this views folder."
+
+Then when you write:
+res.render("home");
+
+Express looks for:
+C:\Users\Kushagra\myproject\views\home.ejs
+
+Interpolation Syntax:
+It means putting the value of a JavaScript variable directly into HTML.
+
+Important EJS syntax
+
+<%= %> is used to output a value:
+<%= name %>
+
+<% %> is used to execute JavaScript without directly outputting it:
+
+<% if (age >= 18) { %>
+    <p>You are an adult.</p>
+<% } %>
+
+So remember:
+
+<%= value %>   → Display/output the value
+<% code %>     → Execute JavaScript
+For EJS, <%= %> is the main interpolation syntax.
+
+Passing Data:
+app.js
+
+const express = require("express");
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.get("/dice", (req, res) => {
+    const dice = Math.floor(Math.random() * 6) + 1;
+
+    res.render("dice", {
+        dice: dice
+    });
+});
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
+
+Here:
+
+const dice = Math.floor(Math.random() * 6) + 1;
+generates a random number from 1 to 6.
+
+Then:
+
+res.render("dice", {
+    dice: dice
+});
+passes the value of dice to the EJS template.
+
+views/dice.ejs
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roll</title>
+</head>
+<body>
+
+    <h1>Dice Roll</h1>
+    <h2>You rolled: <%= dice %></h2>
+
+</body>
+</html>
+
+The important part is:
+<%= dice %>
+EJS replaces this with the value passed from app.js.
+
+For example, if the server generates:
+dice = 4
+
+the browser displays:
+Dice Roll
+You rolled: 4
+
+Conditional Statement:
+In EJS, we can use normal JavaScript if, else if, and else statements to conditionally display HTML.
+
+The JavaScript code goes inside:
+<% %>
+
+And when we want to display a value, we use:
+<%= %>
+
+Example: Dice Roll
+
+Suppose our Express server generates a dice value:
+
+app.get("/dice", (req, res) => {
+    const dice = Math.floor(Math.random() * 6) + 1;
+
+    res.render("dice", { dice });
+});
+
+In views/dice.ejs:
+
+<h1>Dice Roll</h1>
+
+<h2>You rolled: <%= dice %></h2>
+
+<% if (dice === 6) { %>
+    <p> You got the highest number!</p>
+<% } else if (dice === 1) { %>
+    <p> You got the lowest number!</p>
+<% } else { %>
+    <p>Good roll!</p>
+<% } %>
+
+If the dice value is 6:
+You rolled: 6
+You got the highest number!
+
+If the dice value is 1:
+You rolled: 1
+You got the lowest number!
+
+If the dice value is 4:
+You rolled: 4
+Good roll!
+
+LOOPS in EJS
+Example: Displaying users
+
+In app.js, pass an array to the EJS file:
+
+const express = require("express");
+const app = express();
+
+app.set("view engine", "ejs");
+
+app.get("/users", (req, res) => {
+    const users = ["Kushagra", "Rahul", "Aman", "Rohit"];
+
+    res.render("users", { users });
+});
+
+app.listen(3000);
+
+Now in views/users.ejs:
+
+<h1>Users</h1>
+<ul>
+    <% users.forEach(user => { %>
+        <li><%= user %></li>
+    <% }) %>
+</ul>
+
+The browser will display:
+
+Users
+• Kushagra
+• Rahul
+• Aman
+• Rohit
