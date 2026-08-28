@@ -333,3 +333,16 @@ we use:
 
 Includes:
 
+In EJS, includes are used to insert one EJS file inside another EJS file.
+
+This is useful when you have HTML that is repeated across multiple pages, such as:
+
+Navbar
+Header
+Footer
+Sidebar
+
+Instead of writing the same code in every page, you create a separate EJS file and include it wherever you need it.
+
+Syntax: <%- include("includes/head.ejs") %>
+
