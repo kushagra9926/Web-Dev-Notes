@@ -1,0 +1,75 @@
+REST
+It is an architectural style used for designing web APIs. It allows a client (frontend, mobile app, etc.) to communicate with a server using HTTP.
+
+We can use different HTTP methods:
+
+GET     /users       → Get all users
+GET     /users/10    → Get user 10
+POST    /users       → Create a new user
+PUT     /users/10    → Update user 10
+DELETE  /users/10    → Delete user 10
+
+REST API Example in Express
+const express = require("express");
+
+const app = express();
+
+app.use(express.json());
+
+app.get("/users", (req, res) => {
+    res.json([
+        { id: 1, name: "Kushagra" },
+        { id: 2, name: "Rahul" }
+    ]);
+});
+
+app.post("/users", (req, res) => {
+    const user = req.body;
+
+    res.json({
+        message: "User created",
+        user: user
+    });
+});
+
+app.put("/users/:id", (req, res) => {
+    res.send(`User ${req.params.id} updated`);
+});
+
+app.delete("/users/:id", (req, res) => {
+    res.send(`User ${req.params.id} deleted`);
+});
+
+app.listen(3000);
+
+REST and HTTP Methods
+
+| HTTP Method | REST Operation | Example           |
+| ----------- | -------------- | ----------------- |
+| `GET`       | Read           | `GET /users`      |
+| `POST`      | Create         | `POST /users`     |
+| `PUT`       | Update         | `PUT /users/5`    |
+| `PATCH`     | Partial update | `PATCH /users/5`  |
+| `DELETE`    | Delete         | `DELETE /users/5` |
+
+This is often summarized as CRUD:
+C → Create → POST
+R → Read   → GET
+U → Update → PUT/PATCH
+D → Delete → DELETE
+
+Simple picture: 
+
+Frontend / Client
+       ↓
+   HTTP Request
+       ↓
+ REST API
+       ↓
+ Express + Node.js
+       ↓
+    Database
+       ↓
+   HTTP Response
+       ↓
+Frontend / Client
