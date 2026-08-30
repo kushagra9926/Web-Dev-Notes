@@ -263,3 +263,10 @@ URL:
 Response:
 Name: Kushagra, Age: 20
 
+// To Generate Unique ID
+UUID Package
+Universally unique identifier
+
+npm install uuid
+const{ v4: uuidv4} = require('uuid');
+uuidv4();  // this will Generate unique id
